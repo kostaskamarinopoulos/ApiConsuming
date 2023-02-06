@@ -1,0 +1,4 @@
+services:
+
+    App\Transformer\ClientTransformer:
+        public: true
