@@ -1,11 +1,15 @@
-Set up:
+## Setup
+
+- git clone git@github.com:kostaskamarinopoulos/ApiConsuming.git
+- cd ApiConsuming
 - copy .env.example .env
 - docker-compose up -d
 
-http://localhost:8080/
-http://localhost:8080/email
-eg. http://localhost:8080/historical/1675434605/1675434599?symbol=AAOI
+### Run locally
 
-Tests:
-php bin/phpunit
-php bin/phpunit tests/unit/..
+Form: http://localhost:8080/
+Table: eg. http://localhost:8080/historical/1675434605/1675434599?symbol=AAOI
+
+## Run functional tests
+
+- php bin/phpunit tests/unit
