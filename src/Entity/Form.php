@@ -14,16 +14,13 @@ class Form
 
     #[Assert\NotBlank]
     #[Assert\LessThanOrEqual('today')]
-    // #[Assert\Type(\DateType::class)]
     public $startDate;
 
     #[Assert\NotBlank]
     #[Assert\LessThanOrEqual('today')]
-    // #[Assert\Type(\DateType::class)]
     public $endDate;
 
     #[Assert\NotBlank]
-    // #[Assert\Type(\EmailType::class)]
     public $email;
 
 }

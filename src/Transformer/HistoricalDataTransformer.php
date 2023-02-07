@@ -4,8 +4,8 @@ namespace App\Transformer;
 
 class HistoricalDataTransformer implements ApiTransformerInterface
 {
-    public function transform($data) {
-
+    public function transform($data) 
+    {
         foreach($data as $index => $item) {
             $data[$index]['date'] = $this->dateTransforming($data[$index]['date']);
         }

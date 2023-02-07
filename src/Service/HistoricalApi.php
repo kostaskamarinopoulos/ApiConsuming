@@ -8,10 +8,9 @@ use Psr\Log\LoggerInterface;
 
 class HistoricalApi implements ApiClientInterface
 {
-    public function __construct(private HttpClientInterface $xmClient, private LoggerInterface $logger, private $apiKey = '',)
+    public function __construct(private HttpClientInterface $httpClient, private LoggerInterface $logger, private $apiKey = '',)
     {
-        $this->httpClient = $xmClient;
-        $this->apiKey = $apiKey; //set in env
+        $this->httpClient = $httpClient;
         $this->logger = $logger;
     }
 

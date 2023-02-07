@@ -4,6 +4,7 @@ namespace App\Factories;
 
 use App\Entity\MailerData;
 use App\Service\Client;
+use App\Entity\Form;
 
 class MailerDataFactory {
 
@@ -12,8 +13,8 @@ class MailerDataFactory {
         $this->client = $client;
     }
 
-    public function create($data)
-    {
+    public function create(Form $data): MailerData
+    {        
         $mailerData = new MailerData();
         $mailerData->setCompanyName($this->companyNameMapper($data->companySymbol));
         $mailerData->setCompanySymbol($data->companySymbol);
@@ -24,7 +25,7 @@ class MailerDataFactory {
         return $mailerData;
     }
 
-    public function companyNameMapper($companySymbol) 
+    public function companyNameMapper(string $companySymbol): string
     {
         $items = $this->client->fetch([]);
 

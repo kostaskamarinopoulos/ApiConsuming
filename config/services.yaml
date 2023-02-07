@@ -31,3 +31,11 @@ services:
         public: true
     App\Service\ApiClientInterface:
         class: App\Service\ApiClientInterface
+
+when@test:
+    services:
+        mailer.mailer:
+            class: Symfony\Component\Mailer\Mailer
+            public: true
+            arguments:
+                - '@mailer.default_transport'
