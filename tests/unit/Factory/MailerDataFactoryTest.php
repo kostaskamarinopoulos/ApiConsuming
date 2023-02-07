@@ -52,17 +52,17 @@ class MailerDataFactoryTest extends TestCase
 
     public function testCreate() {
         $data = new Form();
-        $data->companySymbol = 'AAIT';
+        $data->setCompanySymbol('AAIT');
         $data->startDate = date_create("25-09-1989");
         $data->endDate = date_create("25-09-2089");
-        $data->email = 'test@test.com';
+        $data->setEmail('test@test.com');
 
         $expected = new MailerData();
-        $expected->companyName = 'iShares MSCI All Country Asia Information Technology Index Fund';
-        $expected->companySymbol = 'AAIT';
-        $expected->startDate = "1989-09-25";
-        $expected->endDate = "2089-09-25";
-        $expected->email = 'test@test.com';
+        $expected->setCompanyName('iShares MSCI All Country Asia Information Technology Index Fund');
+        $expected->setCompanySymbol('AAIT');
+        $expected->setStartDate("1989-09-25");
+        $expected->setEndDate("2089-09-25");
+        $expected->setEmail('test@test.com');
 
         $actual = $this->factory->create($data);
 
