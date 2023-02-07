@@ -12,7 +12,7 @@ class ChartGraph
         $this->chartBuilder = $chartBuilder;
     }
 
-    public function draw($data)
+    public function build($data)
     {
         $chart = $this->chartBuilder->createChart(Chart::TYPE_LINE);
 

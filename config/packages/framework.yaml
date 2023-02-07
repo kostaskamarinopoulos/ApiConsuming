@@ -21,16 +21,6 @@ framework:
     http_client:
         default_options:
             max_redirects: 5
-        scoped_clients:
-            # Specialized client to consume the Client
-            xm_client:
-                timeout: 10
-                base_uri: 'https://google.com'
-                headers:
-                    'Accept': 'application/vnd.github.v3+json'
-                    'Content-Type': 'application/json'
-                    'test1': 'test2'
-                    # 'Authorization': 'token %env(GITHUB_API_TOKEN)%'
 
 when@test:
     framework:

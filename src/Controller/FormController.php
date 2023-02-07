@@ -25,8 +25,8 @@ class FormController extends AbstractController
         $this->chart = $chart;
     }
     
-    public function index(Environment $twig, Request $request) {
-
+    public function index(Environment $twig, Request $request) 
+    {
         $formEntity = new Form();
         $form = $this->createForm(SymbolFormType::class);
 
@@ -47,7 +47,8 @@ class FormController extends AbstractController
         );
     }
 
-    public function table(Request $request, HistoricalApi $client, HistoricalDataTransformer $transformer, int $endDate, int $startDate) {
+    public function historical(Request $request, HistoricalApi $client, HistoricalDataTransformer $transformer, int $endDate, int $startDate) 
+    {
         $params = ['symbol' => $request->query->get('symbol')];
         $data = $client->fetch($params);
 
@@ -58,7 +59,7 @@ class FormController extends AbstractController
         });
 
         $items = $transformer->transform($dataInGivenRange);
-        $chart = $this->chart->draw($items);
+        $chart = $this->chart->build($items);
         return $this->render('table.html.twig', ['items' => $items, 'chart' => $chart]);
     }
 }
