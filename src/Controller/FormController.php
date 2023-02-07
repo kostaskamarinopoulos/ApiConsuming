@@ -35,7 +35,7 @@ class FormController extends AbstractController
             $mailData = $this->mailerDataFactory->create($data);
             
             $this->mailer->send($mailData);
-            return $this->redirectToRoute('historical_api', ['endDate' => strtotime($data->endDate->format('Y-m-d')), 'startDate' => strtotime($data->startDate->format('Y-m-d')), 'symbol' => $data->companySymbol]);
+            return $this->redirectToRoute('historical_api', ['endDate' => strtotime($data->endDate->format('Y-m-d')), 'startDate' => strtotime($data->startDate->format('Y-m-d')), 'symbol' => $data->getCompanySymbol()]);
         }
 
         return new Response($twig->render('form/index.html.twig', 

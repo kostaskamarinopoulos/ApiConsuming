@@ -10,7 +10,7 @@ class Form
 {
     #[Assert\NotBlank]
     #[AcmeAssert\CompanySymbolConstraint]
-    public $companySymbol;
+    private $companySymbol;
 
     #[Assert\NotBlank]
     #[Assert\LessThanOrEqual('today')]
@@ -21,6 +21,25 @@ class Form
     public $endDate;
 
     #[Assert\NotBlank]
-    public $email;
+    private $email;
 
+    public function setCompanySymbol($companySymbol): void
+    {
+        $this->companySymbol = $companySymbol;
+    }
+
+    public function getCompanySymbol(): string
+    {
+        return $this->companySymbol;
+    }
+
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
 }

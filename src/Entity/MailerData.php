@@ -8,11 +8,11 @@ use App\Validator as AcmeAssert;
 
 class MailerData
 {
-    public string $companyName;
-    public string $companySymbol;
-    public string $endDate;
-    public string $startDate;
-    public string $email;
+    private string $companyName;
+    private string $companySymbol;
+    private string $endDate;
+    private string $startDate;
+    private string $email;
 
     public function setCompanyName($companyName): void
     {

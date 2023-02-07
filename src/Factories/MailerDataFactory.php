@@ -16,11 +16,11 @@ class MailerDataFactory {
     public function create(Form $data): MailerData
     {        
         $mailerData = new MailerData();
-        $mailerData->setCompanyName($this->companyNameMapper($data->companySymbol));
-        $mailerData->setCompanySymbol($data->companySymbol);
+        $mailerData->setCompanyName($this->companyNameMapper($data->getCompanySymbol()));
+        $mailerData->setCompanySymbol($data->getCompanySymbol());
         $mailerData->setEndDate($data->endDate->format('Y-m-d'));
         $mailerData->setStartDate($data->startDate->format('Y-m-d'));
-        $mailerData->setEmail($data->email);
+        $mailerData->setEmail($data->getEmail());
 
         return $mailerData;
     }

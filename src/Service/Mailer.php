@@ -9,7 +9,6 @@ use Psr\Log\LoggerInterface;
 
 class Mailer
 {
-
     public function __construct(private MailerInterface $mailer, private LoggerInterface $logger)
     {
         $this->mailer = $mailer;
@@ -21,9 +20,9 @@ class Mailer
         try {
             $email = (new Email())
                 ->from($_ENV['EMAIL_SENDER'])
-                ->to($data->email)
-                ->subject('for submitted Company Symbol = '.$data->companySymbol.' => Company’s Name = '.$data->companyName)
-                ->text('From '.$data->startDate.' to '.$data->endDate);
+                ->to($data->getEmail())
+                ->subject('for submitted Company Symbol = '.$data->getCompanySymbol().' => Company’s Name = '.$data->getCompanyName())
+                ->text('From '.$data->getStartDate().' to '.$data->getEnddate());
 
             //Need to uncomment the line below
             // $this->mailer->send($email);
