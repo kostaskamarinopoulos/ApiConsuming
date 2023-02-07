@@ -39,6 +39,10 @@ body {
     cursor: pointer;
 }
 
-label {
+legend {
+    padding-top: 10px;
+}
+
+#symbol_form_endDate label, #symbol_form_startDate label {
     padding: 20px;
 }
