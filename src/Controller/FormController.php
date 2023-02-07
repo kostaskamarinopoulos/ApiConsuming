@@ -13,14 +13,16 @@ use App\Entity\Form;
 use App\Factories\MailerDataFactory;
 use Twig\Environment;
 use App\Service\Mailer;
+use App\Service\ChartGraph;
 
 class FormController extends AbstractController
 {
 
-    public function __construct(protected Mailer $mailer, private MailerDataFactory $mailerDataFactory)
+    public function __construct(protected Mailer $mailer, private MailerDataFactory $mailerDataFactory, private ChartGraph $chart)
     {
         $this->mailer = $mailer;
         $this->mailerDataFactory = $mailerDataFactory;
+        $this->chart = $chart;
     }
     
     public function index(Environment $twig, Request $request) {
@@ -56,6 +58,7 @@ class FormController extends AbstractController
         });
 
         $items = $transformer->transform($dataInGivenRange);
-        return $this->render('table.html.twig', ['items' => $items]);
+        $chart = $this->chart->draw($items);
+        return $this->render('table.html.twig', ['items' => $items, 'chart' => $chart]);
     }
 }

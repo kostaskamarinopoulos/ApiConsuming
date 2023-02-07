@@ -1,0 +1,37 @@
+{
+  "name": "xm",
+  "version": "1.0.0",
+  "description": "- git clone git@github.com:kostaskamarinopoulos/ApiConsuming.git - cd ApiConsuming - copy .env.example .env - composer install - docker-compose up -d",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kostaskamarinopoulos/ApiConsuming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kostaskamarinopoulos/ApiConsuming/issues"
+  },
+  "homepage": "https://github.com/kostaskamarinopoulos/ApiConsuming#readme",
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@symfony/ux-chartjs": "file:vendor/symfony/ux-chartjs/assets",
+    "@symfony/webpack-encore": "^4.2.0",
+    "chart.js": "^3.4.1",
+    "webpack-notifier": "^1.15.0"
+  },
+  "dependencies": {
+    "@symfony/stimulus-bridge": "^3.2.1",
+    "core-js": "^3.27.2"
+  }
+}
