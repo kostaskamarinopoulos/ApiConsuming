@@ -14,7 +14,8 @@ class Client implements ApiClientInterface
         $this->logger = $logger;
     }
 
-    public function fetch(array $params = []) {
+    public function fetch(array $params = []) 
+    {
         try {
             $response = $this->httpClient->request('GET', $_ENV['API_COMPANIES'], [
                 'query'   => [
@@ -26,6 +27,7 @@ class Client implements ApiClientInterface
             ]);
 
             if ($response->getStatusCode() !== 200) {
+                
                 return new JsonResponse('Client Error ', 400);
             }
 

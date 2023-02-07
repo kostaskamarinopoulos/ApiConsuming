@@ -14,7 +14,8 @@ class HistoricalApi implements ApiClientInterface
         $this->logger = $logger;
     }
 
-    public function fetch(array $params = []) {
+    public function fetch(array $params) 
+    {
         try {
             
             $response = $this->httpClient->request('GET', $_ENV['HISTORICAL_API'], [

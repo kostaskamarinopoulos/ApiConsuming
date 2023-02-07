@@ -26,7 +26,7 @@ class HistoricalApiTest extends TestCase
 
         $httpClient = new MockHttpClient($mockResponse);
         $service = new HistoricalApi($httpClient, $this->mockLogger);
-        $responseData = $service->fetch();
+        $responseData = $service->fetch([]);
 
         self::assertSame('GET', $mockResponse->getRequestMethod());
         self::assertSame($_ENV['HISTORICAL_API'], $mockResponse->getRequestUrl());
