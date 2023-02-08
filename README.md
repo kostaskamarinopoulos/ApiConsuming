@@ -2,11 +2,10 @@
 
 - git clone git@github.com:kostaskamarinopoulos/ApiConsuming.git
 - cd ApiConsuming
-- copy .env.example .env
+- cp .env.example .env
 - docker-compose up -d --build
 - docker exec -it php bash
-- composer install
-- npm i && npm run watch
+- Run in the conatiner `composer install && npm i && npm run watch`
 
 ### Run locally
 
